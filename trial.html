@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-TRADE.COM</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="icons">
+            <span class="icon">❤</span>
+            <span class="icon">🛒</span>
+            <span class="icon">👤</span>
+        </div>
+        <div class="header-main">
+            <div class="menu-icon">☰</div>
+            <div class="logo">I-TRADE.COM</div>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+        </div>
+
+        <div class="icons22">
+            <span class="icon">❤</span>
+            <span class="icon">🛒</span>
+            <span class="icon">👤</span>
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="show-all">
+            <input type="checkbox" id="show-all">
+            <label for="show-all">Show All</label>
+        </div>
+
+        <div class="category-dropdown">
+            <select>
+                <option value="laptops">Laptops</option>
+                <option value="phones">Phones</option>
+                <option value="accessories">Accessories</option>
+                <option value="home-appliances">Home Appliances</option>
+                <option value="electronics">Electronics</option>
+                <option value="health-beauty">Health and Beauty</option>
+                <option value="babies-kids">Babies and Kids</option>
+                <option value="fashion">Fashion</option>
+                <option value="services">Services</option>
+                <option value="jobs">Jobs</option>
+            </select>
+        </div>
+
+        <div class="tabs">
+            <button class="tab-button">Trending</button>
+            <button class="tab-button">New</button>
+            <button class="tab-button">Laptops</button>
+            <button class="tab-button">Mobile Phones</button>
+        </div>
+
+        <section class="product-section" id="trending">
+            <h2>Trending</h2>
+            <div class="product-list">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </section>
+
+        <section class="product-section" id="new">
+            <h2>New</h2>
+            <div class="product-list">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </section>
+
+        <section class="product-section" id="laptops">
+            <h2>Laptops</h2>
+            <div class="product-list">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </section>
+
+        <section class="product-section" id="mobile-phones">
+            <h2>Mobile Phones</h2>
+            <div class="product-list">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 I-TRADE.COM. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+}
+
+.header-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.logo {
+    font-size: 1.5em;
+    margin-left: 1em;
+}
+
+.search-bar {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.search-bar input {
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.icons .icon {
+    margin: 0 1em;
+    cursor: pointer;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+.show-all {
+    padding: 1em;
+}
+
+.category-dropdown {
+    padding: 1em;
+}
+
+.tabs {
+    display: flex;
+    justify-content: space-around;
+    background-color: #eee;
+    padding: 1em;
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.product-section {
+    padding: 1em;
+}
+
+.product-list {
+    display: flex;
+    overflow-x: auto;
+}
+
+.product-list div {
+    min-width: 200px;
+    margin-right: 1em;
+    border: 1px solid #ccc;
+    padding: 1em;
+    background-color: #f9f9f9;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+    }
+
+    nav ul.show {
+        display: block;
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .product-list {
+        flex-direction: column;
+    }
+
+    .product-list div {
+        margin-bottom: 1em;
+    }
+
+    .icons22 {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        align-items: center;
+    }
+
+    .header-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-top: 1em;
+    }
+
+    .search-bar {
+        margin-top: 1em;
+        border-radius: 22px;
+    }
+
+    .icons {
+        margin-bottom: 1em;
+    }
+
+    .icons22 {
+        display: none;
+    }
+}
+
+
+/* Layout for larger screens (laptops) */
+@media (min-width: 769px) {
+    header {
+        flex-direction: row; /* Align items horizontally on larger screens */
+        align-items: center;
+        justify-content: space-between; /* Distribute space between items */
+        padding: 1em 2em; /* Adjust padding as needed */
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-right: auto; /* Pushes the logo to the left */
+    }
+
+    .search-bar {
+        align-items: center;
+        text-align: center;
+        max-width: 400px;
+        margin-right: 250px;
+        margin-left: 70px;
+    }
+
+    .search-bar input {
+        
+        padding: 0.8em;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 22px;
+    }
+
+    .icons22 {
+        display: flex;
+        align-items: center;
+        gap: 1em; /* Space between icons */
+    }
+
+    .icons {
+        display: none;
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const menuIcon = document.querySelector('.menu-icon');
+    const nav = document.querySelector('nav ul');
+
+    menuIcon.addEventListener('click', () => {
+        nav.classList.toggle('show');
+    });
+
+    const tabs = document.querySelectorAll('.tab-button');
+    const sections = document.querySelectorAll('.product-section');
+
+    tabs.forEach((tab, index) => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(btn => btn.classList.remove('active'));
+            sections.forEach(section => section.style.display = 'none');
+
+            tab.classList.add('active');
+            sections[index].style.display = 'block';
+        });
+    });
+
+    // Set the first tab as active by default
+    tabs[0].classList.add('active');
+    sections[0].style.display = 'block';
+});

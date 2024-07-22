@@ -1,0 +1,613 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    background-color: #110336;
+    color: white;
+}
+
+.header-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.logo {
+    font-size: 1.5em;
+    margin-left: 1em;
+}
+
+.search-bar {
+    width: 100%;
+    margin-top: 1em;
+}
+
+.search-bar input {
+    padding: 0.5em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.icons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.icons .icon {
+    margin: 0 1em;
+    cursor: pointer;
+}
+
+.menu-icon {
+    cursor: pointer;
+}
+
+.product-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin-right: 1em;
+    background-color: #fff;
+    flex: 0 0 auto; /* Prevent shrinking and allow horizontal scrolling */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-item h3 {
+    margin: 0.5em 0;
+}
+
+.product-item p {
+    margin: 0.5em 0;
+    font-weight: bold;
+}
+
+.product-item a {
+    text-decoration: none;
+    color: #007BFF;
+}
+
+.product-item a:hover {
+    text-decoration: underline;
+}
+
+.product-section {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 0;
+    position: absolute; /* To stack sections on top of each other */
+    width: 100%;
+}
+
+.product-section:not(:first-child) {
+    display: none;
+}
+
+.product-section.active {
+    opacity: 1;
+    display: block;
+}
+
+/* Style for the slides */
+#trending-products .slide, #new-products .slide {
+    display: none; /* Hide all slides initially */
+    text-align: center;
+}
+
+#trending-products .slide:first-child, #new-products .slide:first-child {
+    display: block; /* Show the first slide initially */
+}
+
+.section-header {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.sticker {
+    margin-left: 10px;
+    animation: moveSticker 2s infinite alternate;
+    font-size: 2.2em; /* Adjust the size as needed */
+}
+
+.discount-sticker {
+    background-color: red;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.3em; /* Adjust the size as needed */
+    font-weight: bold;
+    margin-left: 10px;
+    animation: moveDiscountSticker 2s infinite alternate;
+}
+
+.promotion-sticker {
+    background-color: blue;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.3em; /* Adjust the size as needed */
+    font-weight: bold;
+    margin-left: 10px;
+    animation: movePromotionSticker 2s infinite alternate;
+}
+
+
+@keyframes moveSticker {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(10px); }
+}
+
+@keyframes moveDiscountSticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+
+@keyframes movePromotionSticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(10px); }
+}
+
+
+.icons {
+    display: flex;
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Add space between icons */
+    width: 100%;
+}
+
+.icon-wrapper {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+nav {
+    background-color: #444;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin-right: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    display: block;
+}
+
+.show-all {
+    padding: 1em;
+}
+
+.category-dropdown {
+    padding: 1em;
+}
+
+main {
+    padding: 1em;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.tab-button {
+    padding: 0.5em 1em;
+    border: none;
+    background-color: #ddd;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.tab-button:hover {
+    background-color: #ccc;
+}
+
+.product-section {
+    margin-top: 1em;
+}
+
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.product-item {
+    border: 1px solid #ddd;
+    padding: 1em;
+    border-radius: 4px;
+    width: calc(25% - 2em); /* Adjust width based on the number of columns */
+}
+
+.product-item img {
+    max-width: 100%;
+    height: auto;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+/* Style for the horizontal scrolling container */
+.slideshow-container {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    overflow-y: hidden; /* Disables vertical scrolling */
+    white-space: nowrap; /* Keeps items in a single line */
+    padding: 10px 0; /* Optional: padding around the container */
+    scroll-behavior: smooth; /* Optional: smooth scrolling */
+}
+
+.slide {
+    display: inline-block;
+    width: 200px; /* Adjust based on your design */
+    margin-right: 10px; /* Space between items */
+    vertical-align: top; /* Align items to the top */
+}
+
+.slide img {
+    width: 100%;
+    height: auto;
+}
+
+h2 {
+    margin-bottom: 10px; /* Space between heading and container */
+}
+
+/* Optional: Styling for the scrollbar */
+.slideshow-container::-webkit-scrollbar {
+    height: 8px; /* Height of the scrollbar */
+}
+
+.slideshow-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 10px;
+}
+
+.slideshow-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Color of the scrollbar thumb on hover */
+}
+
+
+
+#homepage-sections {
+    padding: 1em;
+}
+
+section {
+    margin-bottom: 2em;
+}
+
+#trending-section,
+#new-section {
+    padding: 1em;
+    background-color: #f9f9f9;
+}
+
+#trending-products,
+#new-products {
+    display: flex;
+    overflow-x: auto;
+}
+
+#trending-products div,
+#new-products div {
+    min-width: 200px;
+    margin-right: 1em;
+    border: 1px solid #ccc;
+    padding: 1em;
+    background-color: #fff;
+}
+
+#category-products {
+    padding: 1em;
+    background-color: #fff;
+}
+
+
+@media (max-width: 768px) {
+    .nav-menu {
+        display: none; /* Hide menu by default */
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu.show {
+        display: flex; /* Show menu when toggled */
+    }
+
+    .menu-icon {
+        display: block;
+        cursor: pointer;
+    }
+
+    .category-dropdown {
+        display: block; /* Show dropdown on smaller screens */
+    }
+
+    .tabs {
+        flex-direction: column;
+    }
+
+    .product-list {
+        flex-direction: column;
+    }
+
+    .product-list div {
+        margin-bottom: 1em;
+    }
+
+    .category-buttons {
+        display: none;
+    }
+
+    .category-dropdown {
+        display: block;
+    }
+
+    .icons22 {
+        display: none;
+    }
+
+/* Existing styles */
+
+.icons {
+    display: flex;
+    gap: 1em; /* Space out the icons */
+}
+
+.icon-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-wrapper .message {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 0.5em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.icon-wrapper.liked i {
+    color: red; /* Color when liked */
+}
+
+.icon-wrapper.liked .message {
+    display: block; /* Show message when liked */
+}
+
+/* Optional: Add transition for a smooth color change */
+.icon-wrapper i {
+    transition: color 0.3s ease;
+}
+
+
+.tabs {
+    display: none;
+}
+}
+
+@media (max-width: 480px) {
+    .header {
+        align-items: center;
+    }
+
+    .header-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-left: 0;
+        margin-top: 1em;
+    }
+
+    .search-bar {
+        margin-top: 1em;
+        border-radius: 22px;
+    }
+
+    .icons {
+        margin-bottom: 1em;
+    }
+
+    .icons22 {
+        display: none;
+    }
+
+/* Existing styles */
+
+.icons {
+    display: flex;
+    gap: 1em; /* Space out the icons */
+}
+
+.icon-wrapper {
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-wrapper .message {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 0.5em;
+    border-radius: 4px;
+    font-size: 0.9em;
+    white-space: nowrap;
+}
+
+.icon-wrapper.liked i {
+    color: red; /* Color when liked */
+}
+
+.icon-wrapper.liked .message {
+    display: block; /* Show message when liked */
+}
+
+/* Optional: Add transition for a smooth color change */
+.icon-wrapper i {
+    transition: color 0.3s ease;
+}
+
+
+.category-buttons {
+    display: none;
+}
+
+.category-dropdown {
+    display: block;
+}
+
+.tabs {
+    display: none;
+}
+
+}
+
+
+/* Layout for larger screens (laptops) */
+@media (min-width: 769px) {
+    header {
+        flex-direction: row; /* Align items horizontally on larger screens */
+        align-items: center;
+        justify-content: space-between; /* Distribute space between items */
+        padding: 1em 2em; /* Adjust padding as needed */
+    }
+
+    .header-content {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-right: auto; /* Pushes the logo to the left */
+    }
+
+    .search-bar {
+        align-items: center;
+        text-align: center;
+        max-width: 400px;
+        margin-right: 250px;
+        margin-left: 70px;
+    }
+
+    .search-bar input {
+        
+        padding: 0.8em;
+        width: 100%;
+        box-sizing: border-box;
+        border-radius: 22px;
+    }
+
+    .icons22 {
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 1em; /* Space between icons */
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .category-dropdown {
+        display: none;
+    }
+    
+    .category-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        padding: 1em;
+    }
+    
+    .category-buttons button {
+        background-color: #eee;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 1em;
+        cursor: pointer;
+    }
+
+    .icons22 {
+        display: flex;
+        gap: 1em; /* Space out the icons */
+    }
+
+    .icon-wrapper {
+        position: relative;
+        cursor: pointer;
+    }
+
+    .icon-wrapper .message {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #333;
+        color: white;
+        padding: 0.5em;
+        border-radius: 4px;
+        font-size: 0.9em;
+        white-space: nowrap;
+    }
+
+    .icon-wrapper.liked i {
+        color: red; /* Color when liked */
+    }
+
+    .icon-wrapper.liked .message {
+        display: block; /* Show message when liked */
+    }
+
+    /* Optional: Add transition for a smooth color change */
+    .icon-wrapper i {
+        transition: color 0.3s ease;
+    }
+
+
+    }

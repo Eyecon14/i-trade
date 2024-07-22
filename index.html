@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I-TRADE.COM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="icons">
+            <div class="icon-wrapper" id="love-icon">
+                <i class="fas fa-heart"></i>
+                <span class="message"></span>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="menu-icon">☰</div>
+            <div class="logo">I-TRADE.COM</div>
+        </div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search">
+        </div>
+
+        <div class="icons22">
+            <div class="icon-wrapper" id="love-icon-2">
+                <i class="fas fa-heart"></i>
+                <span class="message"></span>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+            <div class="icon-wrapper">
+                <i class="fas fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="menu-icon"></div>
+    </nav>
+    
+
+    <main>
+        <div class="tabs">
+            <button class="tab-button" data-category="all">All Categories</button>
+            <button class="tab-button" data-category="laptops.html">Laptops</button>
+            <button class="tab-button" data-category="phones.html">Phones</button>
+            <button class="tab-button" data-category="accessories.html">Accessories</button>
+            <button class="tab-button" data-category="electronics.html">Electronics</button>
+            <button class="tab-button" data-category="health-beauty.html">Health and Beauty</button>
+            <button class="tab-button" data-category="fashion.html">Fashion</button>
+            <button class="tab-button" data-category="services.html">Services</button>
+            <button class="tab-button" data-category="home-appliances.html">Home Appliances</button>
+            <button class="tab-button" data-category="jobs.html">Jobs</button>
+            <button class="tab-button" data-category="babies-kids.html">Babies and Kids</button>
+        </div>
+
+        <!-- Category dropdown for phones -->
+        <div class="category-dropdown">
+            <select id="category-select">
+                <option value="all">All Categories</option>
+                <option value="laptops.html">Laptops</option>
+                <option value="phones.html">Phones</option>
+                <option value="accessories.html">Accessories</option>
+                <option value="electronics.html">Electronics</option>
+                <option value="health-beauty.html">Health and Beauty</option>
+                <option value="fashion.html">Fashion</option>
+                <option value="services.html">Services</option>
+                <option value="home-appliances.html">Home Appliances</option>
+                <option value="jobs.html">Jobs</option>
+                <option value="babies-kids.html">Babies and Kids</option>
+            </select>
+        </div>
+
+        <section id="trending-section">
+            <div class="section-header">
+                <h2>Trending</h2>
+                <div class="sticker">🔥</div>
+                <div class="discount-sticker">20% OFF</div>
+            </div>
+            <div id="trending-products">
+                <!-- Trending products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="Laptop 1">
+                    <h3>Laptop 1</h3>
+                    <p>$999.99</p>
+                    <a href="product.html?id=1">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="Laptop 2">
+                    <h3>Laptop 2</h3>
+                    <p>$1199.99</p>
+                    <a href="product.html?id=2">View Details</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+        
+        <section id="new-section">
+            <div class="section-header">
+                <h2>New</h2>
+                <div class="sticker">✨</div>
+                <div class="promotion-sticker">PROMOTION</div>
+            </div>
+            <div id="new-products">
+                <!-- New products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="Laptop 1">
+                    <h3>Laptop 1</h3>
+                    <p>$999.99</p>
+                    <a href="product.html?id=1">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="Laptop 2">
+                    <h3>Laptop 2</h3>
+                    <p>$1199.99</p>
+                    <a href="product.html?id=2">View Details</a>
+                </div>
+                
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="laptops-section">
+            <h2>Laptops</h2>
+            <div class="slideshow-container" id="laptops-products">
+                <!-- Phones products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="Laptop 1">
+                    <h3>Laptop 1</h3>
+                    <p>$999.99</p>
+                    <a href="product.html?id=1&name=Laptop%201&price=999.99&image=index_imgs/phones/a%20(10).jpeg&description=Description%20of%20Laptop%201">View Details</a>
+                </div>
+                <div class="product">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="Laptop 2">
+                    <h3>Laptop 2</h3>
+                    <p>$1199.99</p>
+                    <a href="product.html?id=2&name=Laptop%202&price=1199.99&image=index_imgs/phones/a%20(10).jpeg&description=Description%20of%20Laptop%202">View Details</a>
+                </div>
+                
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="phones-section">
+            <h2>Phones</h2>
+            <div class="slideshow-container" id="phones-products">
+                <!-- Phones products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="accessories-section">
+            <h2>Accessories</h2>
+            <div class="slideshow-container" id="accessories-products">
+                <!-- Accessories products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="electronics-section">
+            <h2>Electronics</h2>
+            <div class="slideshow-container" id="electronics-products">
+                <!-- Electronics products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="health-beauty-section">
+            <h2>Health and Beauty</h2>
+            <div class="slideshow-container" id="health-beauty-products">
+                <!-- Health and Beauty products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="fashion-section">
+            <h2>Fashion</h2>
+            <div class="slideshow-container" id="fashion-products">
+                <!-- Fashion products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="services-section">
+            <h2>Services</h2>
+            <div class="slideshow-container" id="services-products">
+                <!-- Services products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="home-appliances-section">
+            <h2>Home Appliances</h2>
+            <div class="slideshow-container" id="home-appliances-products">
+                <!-- Home Appliances products will be loaded here -->
+
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+    
+        <section id="jobs-section">
+            <h2>Jobs</h2>
+            <div class="slideshow-container" id="jobs-products">
+                <!-- Jobs products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+
+            </div>
+        </section>
+    
+        <section id="babies-kids-section">
+            <h2>Babies and Kids</h2>
+            <div class="slideshow-container" id="babies-kids-products">
+                <!-- Babies and Kids products will be loaded here -->
+                <div class="product-item">
+                    <img src="index_imgs/phones/a (10).jpeg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product1.jpg" alt="New Product 1">
+                    <p>$149.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product2.jpg" alt="New Product 2">
+                    <p>$249.99</p>
+                    <a href="#">View</a>
+                </div>
+                <div class="product-item">
+                    <img src="path/to/new-product3.jpg" alt="New Product 3">
+                    <p>$349.99</p>
+                    <a href="#">View</a>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+    <footer>
+        <p>&copy; 2024 I-TRADE.COM. All rights reserved.</p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+</html>

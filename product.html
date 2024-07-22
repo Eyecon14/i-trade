@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <style>
+        .product-details {
+            max-width: 600px;
+            margin: auto;
+            text-align: center;
+        }
+        .product-details img {
+            max-width: 100%;
+        }
+        .image-slider {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .image-slider img {
+            max-width: 100%;
+            display: none;
+        }
+        .image-slider img.active {
+            display: block;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2em;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.5);
+            padding: 10px;
+        }
+        .arrow.left {
+            left: 10px;
+        }
+        .arrow.right {
+            right: 10px;
+        }
+        .related-products {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .related-products h3 {
+            margin-bottom: 20px;
+        }
+        .related-product {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+        .related-product img {
+            max-width: 100px;
+        }
+        .contact-buttons {
+            margin-top: 20px;
+        }
+        .contact-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            color: #fff;
+            border-radius: 5px;
+        }
+        .chat-button {
+            background-color: #25D366; /* WhatsApp color */
+        }
+        .call-button {
+            background-color: #34b7f1; /* Call button color */
+        }
+    </style>
+</head>
+<body>
+    <div class="product-details">
+        <div class="image-slider">
+            <span class="arrow left">&lt;</span>
+            <img id="product-image" class="active" src="" alt="Product Image">
+            <span class="arrow right">&gt;</span>
+        </div>
+        <h3 id="product-name"></h3>
+        <p id="product-price"></p>
+        <p id="product-description"></p>
+        
+        <!-- Contact Buttons -->
+        <div class="contact-buttons">
+            <a id="chat-button" class="contact-button chat-button" href="#">Chat on WhatsApp</a>
+            <a id="call-button" class="contact-button call-button" href="tel:+233533420206">Call Us</a>
+        </div>
+    </div>
+    
+    <div class="related-products">
+        <h3>Related Products</h3>
+        <div id="related-products-container"></div>
+    </div>
+
+    <script>
+        // Array of product data
+        var products = [
+            {
+                id: 1,
+                name: "Laptop 1",
+                price: 999.99,
+                images: ["index_imgs/phones/a (10).jpeg", "index_imgs/phones/a (11).jpeg"],
+                description: "Description of Laptop 1"
+            },
+            {
+                id: 2,
+                name: "Laptop 2",
+                price: 1199.99,
+                images: ["index_imgs/phones/a (10).jpeg", "index_imgs/phones/a (12).jpeg"],
+                description: "Description of Laptop 2"
+            }
+            // Add more products here
+            ];
+        // Function to get URL parameters
+        function getUrlParameter(name) {
+            name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+            var regex = new RegExp('[\\?&]' + name + '=([^&#]*)');
+            var results = regex.exec(location.search);
+            return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '));
+        }
+
+        // Get the product ID from the URL
+        var productId = parseInt(getUrlParameter('id'));
+
+        // Find the product with the matching ID
+        var product = products.find(p => p.id === productId);
+
+        // Function to get related products based on ID range
+        function getRelatedProducts(productId) {
+            var ranges = [
+                { start: 1, end: 49 },
+                { start: 50, end: 99 },
+                { start: 100, end: 149 },
+                { start: 150, end: 199 },
+                { start: 200, end: 249 },
+                { start: 250, end: 299 },
+                { start: 300, end: 349 },
+                { start: 350, end: 399 },
+                { start: 400, end: 449 },
+                { start: 450, end: 499 },
+                { start: 500, end: 549 },
+                { start: 550, end: 599 }
+            ];
+            
+            // Find the range for the current product
+            var currentRange = ranges.find(range => productId >= range.start && productId <= range.end);
+            
+            // Get related products from the same range, excluding the current product
+            return products.filter(p => p.id >= currentRange.start && p.id <= currentRange.end && p.id !== productId);
+        }
+
+        // Set the product details in the HTML
+        if (product) {
+            document.getElementById('product-name').innerText = product.name;
+            document.getElementById('product-price').innerText = '$' + product.price;
+            document.getElementById('product-image').src = product.images[0];
+            document.getElementById('product-description').innerText = product.description;
+
+            var currentImageIndex = 0;
+            var productImage = document.getElementById('product-image');
+            var leftArrow = document.querySelector('.arrow.left');
+            var rightArrow = document.querySelector('.arrow.right');
+
+            // Function to update the main image
+            function updateImage(index) {
+                productImage.src = product.images[index];
+            }
+
+            // Event listeners for arrows
+            leftArrow.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex > 0) ? currentImageIndex - 1 : product.images.length - 1;
+                updateImage(currentImageIndex);
+            });
+
+            rightArrow.addEventListener('click', function() {
+                currentImageIndex = (currentImageIndex < product.images.length - 1) ? currentImageIndex + 1 : 0;
+                updateImage(currentImageIndex);
+            });
+
+            // Automatically change images every 3 seconds
+            setInterval(function() {
+                currentImageIndex = (currentImageIndex < product.images.length - 1) ? currentImageIndex + 1 : 0;
+                updateImage(currentImageIndex);
+            }, 3000);
+
+            // Display related products
+            var relatedProductsContainer = document.getElementById('related-products-container');
+            var relatedProducts = getRelatedProducts(productId);
+
+            relatedProducts.forEach(relatedProduct => {
+                var relatedProductElement = document.createElement('div');
+                relatedProductElement.className = 'related-product';
+                relatedProductElement.innerHTML = `
+                    <img src="${relatedProduct.images[0]}" alt="${relatedProduct.name}">
+                    <h4>${relatedProduct.name}</h4>
+                    <p>$${relatedProduct.price}</p>
+                    <a href="product.html?id=${relatedProduct.id}">View Details</a>
+                `;
+                relatedProductsContainer.appendChild(relatedProductElement);
+            });
+
+            // Set WhatsApp chat link
+            var chatButton = document.getElementById('chat-button');
+            var whatsappNumber = '+233533420206';
+            var chatMessage = `Please, is this product still available?\n\nName: ${product.name}\nPrice: $${product.price}\nDescription: ${product.description}\nLink: ${window.location.href}\n\nImage: ${product.images[0]}`;
+            chatButton.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(chatMessage)}`;
+        } else {
+            document.getElementById('product-details').innerText = 'Product not found.';
+        }
+    </script>
+</body>
+</html>
+
+
+
